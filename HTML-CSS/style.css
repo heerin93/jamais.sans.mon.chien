@@ -1,5 +1,5 @@
 header {
-    background-color: #eda607;
+    background-color: #ed6107;
     justify-items : center;
     font-family : "Patrick Hand";
 }
@@ -65,7 +65,7 @@ h1 {
 
 .footer {
     position: fixed;
-    background-color: #eda607;
+    background-color: #ed6107;
     text-align: center;
     width: 100%;
     bottom: 0px;
