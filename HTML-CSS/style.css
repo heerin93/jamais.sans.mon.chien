@@ -1,3 +1,72 @@
+header {
+    background-color: #eda607;
+    justify-items : center;
+    font-family : "Patrick Hand";
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin : 0 20px;
+}
+
 body {
-    background-color: bisque;
+    background-color: #edac56;
+    font-family: "Indie Flower";
+}
+
+.formulaireContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.formulaireDeConnexion , .formulaireDInscription {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 60%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 400px;
+}
+#remember {
+    width: auto;
+}
+
+#connexion , #inscrire {
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.dividerVertical {
+    border-left : 2px solid black;
+    height: 500px;
+}
+
+.footer {
+    position: fixed;
+    background-color: #eda607;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
 }
