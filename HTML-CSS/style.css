@@ -70,3 +70,7 @@ h1 {
     width: 100%;
     bottom: 0px;
 }
+
+#commentaire {
+    height: 15em;
+}
