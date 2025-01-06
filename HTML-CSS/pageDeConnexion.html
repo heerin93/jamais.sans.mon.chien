@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="description" content ="Découvrez les meilleurs hébergements adaptés aux chiens : hôtels, campings, maisons d'hôte et gîtes. Partez partout avec votre chien en toute sérénité !"> 
     <link rel="stylesheet" href="style.css" >
+    <script src="pageDeConnexion.js"></script>
     <title>Page d'acceuil</title>
 </head>
 <!--Header-->
@@ -13,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <img class ="logo" src="logoc12.webp" alt ="logo Site" />
-        <div class="navigation">
+        <!--NavBarSimple<div class="navigation">
             <nav>
                 <ul>
                     <li><a href="*"> Accueil </a></li>
@@ -24,7 +25,16 @@
                     <li><a href="*">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        </div>-->
+        <div class="navigation">
+            <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#"> Hébergements
+                <div>
+                    <ul id="showMenuCreer" class="menuCache">
+                        <a href="*"><li class="boutonSecondaire borderBouton">Hôtels</li></a>
+                        <a href="*"><li class="boutonSecondaire borderBouton">campings</li></a>
+                    </ul>
+                </div>
+            </div>
 </header>
 <body>
     <link rel="preconnect" href="https://fonts.googleapis.com">

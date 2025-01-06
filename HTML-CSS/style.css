@@ -3,8 +3,7 @@ header {
     justify-items : center;
     font-family : "Patrick Hand";
 }
-
-ul {
+/*ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -12,7 +11,7 @@ ul {
 
 li {
     margin : 0 20px;
-}
+}*/
 
 body {
     background-color: #edac56;
@@ -73,4 +72,17 @@ h1 {
 
 #commentaire {
     height: 15em;
+}
+
+.menuCache{
+    transform: scaleY(0%) translateY(-50px);
+    transition: 0.2s;
+}
+.menuAffiche{
+    transform: scale(100%);
+    transition: 0.2s;
+}
+
+.menuCache{
+    display: none;
 }
