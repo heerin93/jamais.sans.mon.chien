@@ -8,5 +8,5 @@ function mouseEnterCreer(){
     showMenuCreer.classList.remove("menuCache");
 }
 function mouseLeaveCreer(){
-    showMenuCreer.classList.add("menuCache")
+    showMenuCreer.classList.add("menuCache");
 }

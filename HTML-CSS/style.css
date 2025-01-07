@@ -76,13 +76,12 @@ h1 {
 
 .menuCache{
     display: none;
-    transform: scaleY(0%) translateY(-50px);
-    transition: 0.2s;
 }
-.menuAffiche{
+/* .menuAffiche{
     transform: scale(100%);
     transition: 0.2s;
-}
+    display : block;
+} */
 
 /*.menuCache{
     display: none;

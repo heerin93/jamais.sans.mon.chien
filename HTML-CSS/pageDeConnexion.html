@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="description" content ="Découvrez les meilleurs hébergements adaptés aux chiens : hôtels, campings, maisons d'hôte et gîtes. Partez partout avec votre chien en toute sérénité !"> 
     <link rel="stylesheet" href="style.css" >
-    <script src="pageDeConnexion.js"></script>
     <title>Page d'acceuil</title>
 </head>
 <!--Header-->
@@ -29,9 +28,9 @@
         <div class="navigation">
             <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#"> Hébergements
                 <div>
-                    <ul id="showMenuCreer" class="menuAffiche">
-                        <a href="*"><li class="boutonSecondaire borderBouton">Hôtels</li></a>
-                        <a href="*"><li class="boutonSecondaire borderBouton">campings</li></a>
+                    <ul id="showMenuCreer" class="menuCache">
+                        <a href="#"><li class="boutonSecondaire borderBouton">Hôtels</li></a>
+                        <a href="#"><li class="boutonSecondaire borderBouton">campings</li></a>
                     </ul>
                 </div>
             </div>
@@ -74,13 +73,14 @@
             </div>
         </div>
     </form>
+    <footer>
+            <!--Footer-->
+            <div class="footer">
+                <p>Nom | mail@exemple.com | Téléphone | ©2024</p>
+            </div>
+    </footer>
+    <script src="pageDeConnexion.js"></script>
 </body>
-<footer>
-        <!--Footer-->
-        <div class="footer">
-            <p>Nom | mail@exemple.com | Téléphone | ©2024</p>
-        </div>
-</footer>
 </html>
 
 <!--faire des li avec des hoover pour le menu déroulant
