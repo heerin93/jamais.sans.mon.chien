@@ -129,3 +129,27 @@ h1 {
     display: block;
   }
   
+  .container {
+    padding-top: 150px;
+    display : flex;
+    flex-direction: column;
+    align-self: space-evenly ;
+    height: 181px;
+    width: 160px;
+  }
+
+  .welcome-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .highlights {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .highlight img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
