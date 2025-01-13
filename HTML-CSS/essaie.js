@@ -1,4 +1,4 @@
-// script.js
+/*// script.js
 document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.querySelectorAll(".dropdown");
   
@@ -15,4 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+  */
+
+  try{
+    prenom;
+    alert('Bonjour'); 
+  }
   

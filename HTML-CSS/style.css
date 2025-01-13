@@ -7,6 +7,7 @@ header {
 body {
     background-color: #edac56;
     font-family: "Indie Flower";
+    
 }
 
 .formulaireContainer {
@@ -131,6 +132,7 @@ h1 {
   
   .container {
     padding-top: 150px;
+    margin-left: 50px;
     display : flex;
     flex-direction: column;
     align-self: space-evenly ;
@@ -139,17 +141,23 @@ h1 {
   }
 
   .welcome-section {
-    text-align: center;
-    padding: 20px;
+    text-align: top;
   }
   
   .highlights {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    gap: 20px;
+    width: 70%; 
   }
   
   .highlight img {
     max-width: 100%;
     border-radius: 10px;
   }
+
+  .mainContainer {
+    display: flex;
+    gap: 20px;
+  }
+  
