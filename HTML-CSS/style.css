@@ -161,3 +161,6 @@ h1 {
     gap: 20px;
   }
   
+  .texteAccueil {
+    display : flex;
+  }
