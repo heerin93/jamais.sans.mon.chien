@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="description" content ="Découvrez les meilleurs hébergements adaptés aux chiens : hôtels, campings, maisons d'hôte et gîtes. Partez partout avec votre chien en toute sérénité !"> 
     <link rel="stylesheet" href="style.css" >
-    <title>Page de Connexion</title>
+    <script src="pageDeConnexion.js"></script>
+    <title>Page de connexion</title>
 </head>
 <!--Header-->
 <header>
@@ -13,37 +14,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <img class ="logo" src="logoc12.webp" alt ="logo Site" />
-    <nav class="navbar">
-        <ul class="menu">
-            <li><a href="pageAccueil.html">Accueil</a></li>
-            <li class="dropdown">
-                <a href="#">Hébergements</a>
-                <ul class="submenu">
-                    <li><a href="#">Campings</a></li>
-                    <li><a href="#">Hôtels</a></li>
-                    <li><a href="#">Gîtes</a></li>
+        <!--NavBarSimple<div class="navigation">
+            <nav>
+                <ul>
+                    <li><a href="*"> Accueil </a></li>
+                    <li><a href="*">Hébergements</a></li>
+                    <li><a href="*">Transports</a></li>
+                    <li><a href="*">Activités</a></li>
+                    <li><a href="*">Mon Compte</a></li>
+                    <li><a href="*">Contact</a></li>
                 </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Transports</a>
-                <ul class="submenu">
-                    <li><a href="#">Avion</a></li>
-                    <li><a href="#">Train</a></li>
-                    <li><a href="#">Transports urbains</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Activitées</a>
-                <ul class="submenu">
-                    <li><a href="#">Restaurants</a></li>
-                    <li><a href="#">Boutiques</a></li>
-                    <li><a href="#">Lieux publics</a></li>
-                </ul>
-            </li>
-            <li><a href="pageDeConnexion.html">Connexion / Inscription</a></li>
-            <li><a href="pageDeContact.html">Contact</a></li>
-        </ul>
-    </nav>
+            </nav>
+        </div>-->
+        <div class="navigation">
+            <div id="dropdownMenuCreer" class="boutonPrincipal borderBouton" onclick=location.href="#"> Hébergements
+                <div>
+                    <ul id="showMenuCreer" class="menuCache">
+                        <a href="*"><li class="boutonSecondaire borderBouton">Hôtels</li></a>
+                        <a href="*"><li class="boutonSecondaire borderBouton">campings</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
 </header>
 <body>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +45,9 @@
         <div class="formulaireContainer">
             <div class="FormulaireDeConnexion">
                 <h1> Connexion au compte</h1>
-                <input type="text" id="mail" maxlength="20" minlength="2" placeholder="Adresse email"/>
+                <input type="text" id="pseudo" maxlength="20" minlength="2" placeholder="Nom d'utilisateur"/>
                 </br>
-                <input type="password" id="password" maxlength="20" minlength="2" placeholder="Mot de Passe"/>
-                <div id="cadre-login__soustitre__message"></div>
+                <input type="text" id="mdp" maxlength="20" minlength="2" placeholder="Mot de Passe"/>
                 <div id="check">
                     <input type="checkbox" name="remember" id="remember" checked >
                     <label for="remember" class="checkbox"> Se souvenir de moi </label>
@@ -72,9 +63,9 @@
                 <h1> Inscription</h1>
                 <input type="text" id="mail" maxlength="20" minlength="2" placeholder="Adresse email"/>
                 </br>
-                <input type="text" id="pseudo" maxlength="20" minlength="2" placeholder="Nom d'utilisateur"/>
+                <input type="text" id="newpseudo" maxlength="20" minlength="2" placeholder="Nom d'utilisateur"/>
                 </br>
-                <input type="text" id="mdp" maxlength="20" minlength="2" placeholder="Mot de passe"/>
+                <input type="text" id="newmdp" maxlength="20" minlength="2" placeholder="Mot de passe"/>
                 </br>
                 <input type="text" id="confmdp" maxlength="20" minlength="2" placeholder="Confirmation du mot de passe"/>
                 <div id="inscrire">
@@ -83,14 +74,13 @@
             </div>
         </div>
     </form>
-    <footer>
-            <!--Footer-->
-            <div class="footer">
-                <p>Nom | mail@exemple.com | Téléphone | ©2024</p>
-            </div>
-    </footer>
-    <script src="pageDeConnexion.js"></script>
 </body>
+<footer>
+        <!--Footer-->
+        <div class="footer">
+            <p>Nom | mail@exemple.com | Téléphone | ©2024</p>
+        </div>
+</footer>
 </html>
 
 <!--faire des li avec des hoover pour le menu déroulant
