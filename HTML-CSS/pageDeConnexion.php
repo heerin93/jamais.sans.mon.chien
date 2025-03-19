@@ -1,3 +1,97 @@
+<?php
+//déclarer les variables d'affichage
+$message ='';
+
+
+
+//création de ma fonction de nettoyage des données
+function nettoyage($data){
+    return htmlentities(strip_tags(stripslashes(trim($data))));
+}
+
+//vérifier que le formulaire est submut
+if(isset($_POST["submit"])){
+
+    //vérifier que les données ne sont pas vides avec isset() et empty()
+
+    if (
+        isset($_POST["user_mail"]) && !empty($_POST["user_mail"]) && 
+        isset($_POST["user_newname"]) && !empty($_POST["user_newname"]) && 
+        isset($_POST["user_newmdp"]) && !empty($_POST["user_newmdp"])
+    ) {
+        // deuxième étape de sécurité : vérifier le format des données
+
+        //on va vérifier que l'email a bien un format d'email et que l'âge est bien un entier
+
+        // filte_var(): permet grâce à un ensemble de filtres de s'assurer du format de nos données
+
+        if(filter_var($_POST["user_mail"], FILTER_VALIDATE_EMAIL)) {
+
+
+
+                //3ème étape de sécurité : nettoyer les données --> on veut enlever tout code malveillant
+
+                //htmlentities(): transforme les balises HTML en texte
+
+                // strip_tags() : supprime les balises HTML et PHP
+
+                //trim() : supprime les espace en début et fin de chaîne de caractère
+
+                //stripslashes() : supprime les antislash
+
+                // on va pouvoir stocker nos variables nettoyées 
+                $user_mail= nettoyage($_POST["user_mail"]);
+                $user_newname= nettoyage($_POST["user_newname"]);
+                $user_newmdp= nettoyage($_POST["user_newmdp"]);
+
+                // étape bonus si inscription en BDD : chiffrer les données (hasher le mot de passe par exemple)
+
+                $password = password_hash($password, PASSWORD_BCRYPT);
+
+                // --> on peut enfin communiquer avec la BDD et lui envoyer des données propres
+
+                //communiquer avec la BBD
+                //étape 1 : instanciation de l'objet de connexion à la BDD
+                //il faut précise plusieurs paramètres : host, dbname, nom d'utilisateur et mot de passe utilisateur
+                $bdd = new PDO('mysql:host=localhost;dbname=users', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                
+                //try... catch pour gérer des erreurs de communication avec la BDD
+                try {
+                    //étape 2 : la bonne méthode
+                    //avec une requête SQL préparée
+                    //étape 2.1 : méthode prepare()
+                    $req = $bdd->prepare("INSERT INTO users (`user_mail`, `user_newname`, `user_newmdp`) VALUES (?, ?, ?)");
+                    //étape 2.2 : compléter les ? avec un binding des paramètres
+                    $req->bindParam(1, $user_mail, PDO::PARAM_STR);
+                    $req->bindParam(2, $user_newname, PDO::PARAM_STR);
+                    $req->bindParam(3, $user_newmdp, PDO::PARAM_STR);
+                    //étape 2.3 : éxecuter la requête avec execute() :
+                    $req->execute();
+                    //étape bonus : si retour de la BDD : récupérer la réponse de la BDD
+                    //ce sera un tableau contenant les enregistrements sous forme de tableau associatifs (ou d'objet)
+                    //$data = $req->fetchAll();
+                    //message de confirmation à l'utilisateur
+                    $message = "L'enregistrement de $user_newname, dont l'email est : $user_mail, a été affecté avec succès.";
+                }catch(EXCEPTION $error){
+                    //en cas de pb, je récupère le message d'erreur et je l'affiche
+                    $message = $error->getMessage();
+                }
+
+            }
+        } else { // on gère une erreur de format de mail
+
+            $message = "Votre mail n'est pas au bon format !";
+
+        }
+
+    } else { // on gère une erreur de données non remplie
+
+        // on affiche un message d'erreur à l'utilisateur
+
+        $message = "veuillez remplir les champs obligatoires !";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
